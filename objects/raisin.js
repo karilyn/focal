@@ -11,3 +11,25 @@ const raisinAlarm = function(cookie) {
 console.log(raisinAlarm(["🍫", "🍫", "🍇", "🍫"]));
 console.log(raisinAlarm(["🍫", "🍇", "🍫", "🍫", "🍇"]));
 console.log(raisinAlarm(["🍫", "🍫", "🍫"]));
+
+
+const raisinAlarmArray = function(cookies) {
+  // Put your solution here
+  let newArr = [];
+  for (let x = 0; x < cookies.length; x++) {
+    newArr.push(raisinAlarm(cookies[x]));
+  }
+  return newArr;
+};
+
+console.log(
+  raisinAlarmArray([
+    ["🍫", "🍫", "🍇", "🍫"],
+    ["🍫", "🍇", "🍫", "🍫", "🍇"],
+    ["🍫", "🍫", "🍫"],
+  ])
+);
+
+
+// @mzparulina
+// @karilyn
