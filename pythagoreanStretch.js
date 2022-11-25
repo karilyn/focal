@@ -8,9 +8,10 @@ const input = [
   { x: 8, y: 15 }
 ];
 
-const result = input.map(function(result) {
+const result = input.map(result => {
+  // returns an array of an object's property values
   let numbers = Object.values(result);
-// Math.pow returns the value of a base expression taken to a specified power.
+  // Math.pow returns the value of a base expression taken to a specified power.
   return Math.sqrt(Math.pow(numbers[0], 2) + Math.pow(numbers[1], 2));
 });
 
