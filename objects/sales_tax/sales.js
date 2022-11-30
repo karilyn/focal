@@ -4,7 +4,7 @@ const salesTaxRates = {
   SK: 0.10
 };
 
-
+// first, split the objects by company
 const companySalesData = [
   {
     // BC tax rate of 0.12 * (add sales data together)
@@ -26,18 +26,59 @@ const companySalesData = [
   }
 ];
 
-// function calculateTax(sales, taxRate) {
-  // console.log
+function calculateTax(sales, province) {
+  let taxRate = salesTaxRates[province];
+  // iterate through each province propety in the salesTaxRates array
+  for (const province in salesTaxRates) {
+    const sales = taxRate.reduce(add, 0);
+    function add(accumulator, a) {
+      return accumulator += a;
+    }
+  } return sales
+}
+
+console.log(calculateTax("TELUS", "BC"));
+
+// function reducer(accumulator, currentValue, index) {
+  // const returns = accumulator + currentValue;
+
+  // return returns;
 // }
-
-// we need to add all the companySalesData.sales values together
-const salesTotals = Object.values(companySalesData)
-const sum = salesTotals.reduce((accumulator, value) => {
-  return accumulator + value;
-}, 0);
-console.log(sum);
+// array.reduce(reducer);
 
 
-// const calculateSalesTax = function(salesData, taxRates) {}
 
+// console.log(companySalesData);
 
+// sum the ["sales"] values together for each object in the companySalesData array
+
+// const initialValue = 0
+// const reducer = (accumulator, item) => {
+  // return accumulator + item;
+// }
+// const salesTotal = numbers.reduce(reducer, initialValue)
+
+function calculateTax(sales, province) {
+  let taxRate = salesTaxRates[province];
+  //for each sale, accumulate into totalSales and totalTax
+
+}
+
+function calculateSalesTax(salesData, taxRates) {
+
+}
+
+//const results = calculateSalesTax(companySalesData, salesTaxRates);
+//console.log(results);
+/* Expected Results:
+{
+  Telus: {
+    totalSales: 1300
+    totalTaxes: 144
+  },
+  Bombardier: {
+    totalSales: 800,
+    totalTaxes: 40
+  }
+}
+*/
