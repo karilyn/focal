@@ -1,5 +1,6 @@
-function sayHello(person) {
+function sayHelloTo(person) {
   console.log(`Hello ${person}!`);
 };
 
-console.log(module);
+// we need to actually export the function
+module.exports = sayHelloTo;
